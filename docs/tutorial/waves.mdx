@@ -1,0 +1,70 @@
+---
+id: waves
+title: Waves
+---
+
+# Waves — Limited Supply & Rarity
+
+**Trust Cards** are released in **successive waves**, each with a **limited number of cards** and a **specific rarity distribution**. This phased release ensures **prestige for early adopters** and creates a controlled progression for community growth.
+
+---
+
+## Concept of Waves
+
+- Each wave represents a **minting phase** with:
+  - a **supply cap** (e.g. 500 cards in Wave 1),
+  - a **different rarity probability** (earlier waves have higher chances of rare cards),
+  - a **defined target audience**.
+- Once the supply of a wave is exhausted, the **next wave** opens.
+- Each wave is visually distinct, so collectors can immediately recognize the edition of a card.
+
+👉 This mechanism combines **scarcity and community expansion**.
+
+---
+
+## Rarity Distribution per Wave
+
+- **Wave 1**: higher probability of minting **Rare / Legendary** cards. Target: **Web3 / crypto personalities** who are not yet part of the Intuition circle.
+- **Wave 2**: balanced distribution (more Commons, fewer Rares). Target: **other Web3 personalities**, still outside the Intuition circle.
+- **Waves 3–4**: lower chance of Legendary, mostly Common / Rare.
+- **Wave 0** (special edition): reserved for Intuition’s pioneers (e.g. *Relics* holders).
+
+Example distribution (illustrative only):
+
+| Wave   | Supply | Common | Rare | Epic | Legendary |
+|--------|--------|--------|------|------|-----------|
+| Wave 1 | 500    | 50%    | 30%  | 15%  | 5%        |
+| Wave 2 | 1000   | 65%    | 25%  | 8%   | 2%        |
+| Wave 3 | 2000   | 75%    | 20%  | 4%   | 1%        |
+| Wave 0 | TBD    | ???    | ???  | ???  | ???       |
+
+---
+
+## Why Waves?
+
+1. **Prestige & Status**  
+   - Early holders have rarer, more visible cards.  
+   - This creates exclusivity and prestige for early adopters.  
+
+2. **Controlled Growth**  
+   - The community expands gradually instead of opening to everyone at once.  
+   - Each wave introduces a new layer of Web3 personalities and users.  
+
+3. **Invitation System**  
+   - Each wave relies on **invitations** to bring in new members.  
+   - 👉 See the [Invitations tutorial](./invitations.mdx) for more details.  
+
+---
+
+## 🛠️ Technical Implementation
+
+Each wave is defined in the smart contract with its own configuration:  
+
+```solidity
+struct WaveConfig {
+    uint256 supplyCap;        // Maximum number of cards in the wave
+    uint256 minted;           // Already minted
+    uint8[4] rarityWeights;   // Probability weights [Common, Rare, Epic, Legendary]
+    uint256 startTime;        // Wave start
+    uint256 endTime;          // Wave end
+}
