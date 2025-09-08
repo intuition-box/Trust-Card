@@ -2,10 +2,10 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   docs: [
-    'intro',
+    // 'intro',
     {
       type: 'category',
-      label: 'Tutorials',
+      label: 'Overview',
       link: { type: 'doc', id: 'tutorial/overview' },
       items: [
         'tutorial/waves',
