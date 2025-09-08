@@ -19,7 +19,7 @@ const tiles: Tile[] = [
   { 
     title: "Overview", 
     desc: "Discover the vision behind Trust-Card: how collectibles, invitations, and trust links combine to build a living graph of reputation.", 
-    to: "/docs/tutorial/Overview", 
+    to: "/docs/tutorial/overview", 
     tag: "Start", 
     emoji: "🌐", 
     span: "wide" 
@@ -86,7 +86,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className={clsx("button button--secondary button--lg", styles.btnPrimary)}
-            to="/docs/tutorial/Overview"
+            to="/docs/tutorial/overview"
           >
             Explore
           </Link>
@@ -110,7 +110,7 @@ export default function Home(): ReactNode {
                 </Heading>
                 <p className={styles.heroLead}>Not just a collectible — an invitation, a proof of trust, and a key to reputation. Grow the network, visualize connections, and unlock new opportunities across the Intuition ecosystem.</p>
                 <div className={styles.ctaRow}>
-                  <Link className={clsx("button", styles.btnPrimary)} to="/docs/tutorial/Overview">
+                  <Link className={clsx("button", styles.btnPrimary)} to="/docs/tutorial/overview">
                     Start reading
                   </Link>
                   <Link className={clsx("button", styles.btnSecondary)} to="/docs/tutorial/waves">
