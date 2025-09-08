@@ -1,7 +1,9 @@
 ---
-id: overview
+id: Overview
 title: Tutorials Overview
 ---
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 # Trust Card Overview
 
@@ -21,7 +23,7 @@ Trust Card is a system where **3D NFT cards** are not only collectibles, but als
 6. The minting process is special, with a full **[Mint Ceremony](./mint.mdx)** → animated intro, interactive 3D model, static frame.  
 7. Some cards may also exist as **[Physical Editions](./physical-card.mdx)** → premium print, QR code, NFC chip.  
 8. Each card can optionally include a **[Personal Domain](./domain.mdx)** → a shareable identity page.  
-
+<iframe style={{border:"none", borderRadius:"12px"}} width="800" height="450" src="https://whimsical.com/embed/RbNoyZiimR934Bh3Ui53u5"></iframe>
 ---
 
 ## 🔗 How Everything Connects
@@ -45,3 +47,10 @@ Trust Card is built as a **progressive, trust-driven ecosystem**:
 - **Identity** comes from **NFT design**, **physical editions**, and **personal domains**.  
 
 👉 The following tutorials dive into each part in detail. Start with [Waves](./waves.mdx).  
+
+<BrowserOnly fallback={<div>Chargement du board…</div>}>
+  {() => {
+    const ExcalidrawBoard = require('@site/src/components/ExcalidrawBoard').default;
+    return <ExcalidrawBoard height={400} />;
+  }}
+</BrowserOnly>
