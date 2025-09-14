@@ -2,7 +2,6 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   docs: [
-    // 'intro',
     {
       type: 'category',
       label: 'Overview',
@@ -10,12 +9,20 @@ const sidebars: SidebarsConfig = {
       items: [
         'tutorial/waves',
         'tutorial/invitations',
-        'tutorial/trust-graph',
-        'tutorial/physical-card',
-        'tutorial/domain',
-        'tutorial/reputation-checker',
+        'tutorial/chest',
+        'tutorial/relic-holder',
+        {
+          type: 'category',
+          label: 'Cards',
+          items: [
+            'tutorial/nft',
+            'tutorial/physical-card',
+          ],
+        },
         'tutorial/mint',
-        'tutorial/nft',
+        'tutorial/trust-graph',
+        'tutorial/reputation-checker',
+        'tutorial/domain',
       ],
     },
   ],

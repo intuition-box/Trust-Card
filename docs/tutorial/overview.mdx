@@ -7,7 +7,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 # Trust Card Overview
 
-This guide walks through the project step by step, showing how **cards, invitations, trust, reputation, and design** all connect together.
+This guide walks through the project step by step, showing how **waves, invitations, minting, chests, cards, trust, and reputation** all connect together.
 
 ---
 
@@ -15,25 +15,31 @@ This guide walks through the project step by step, showing how **cards, invitati
 
 Trust Card is a system where **3D NFT cards** are not only collectibles, but also **invitations** and **proofs of trust**.  
 
-1. Cards are released in **[Waves](./waves.mdx)** → each wave has a limited supply and different rarity probabilities.  
-2. Card holders receive **[Invitations](./invitations.mdx)** → these bring new members into the ecosystem.  
-3. Every invitation and trust link feeds into the **[Trust Graph](./trust-graph.mdx)** → a visual map of relationships.  
-4. Users can explore trust and reputation with the **[Reputation Checker](./reputation-checker.mdx)** → search for anyone, view their trust links, and measure degrees of separation.  
-5. The NFTs themselves are designed as **[3D Cards](./nft.mdx)** → interactive, animated, and collectible.  
-6. The minting process is special, with a full **[Mint Ceremony](./mint.mdx)** → animated intro, interactive 3D model, static frame.  
-7. Some cards may also exist as **[Physical Editions](./physical-card.mdx)** → premium print, QR code, NFC chip.  
-8. Each card can optionally include a **[Personal Domain](./domain.mdx)** → a shareable identity page.  
-<iframe style={{border:"none", borderRadius:"12px"}} width="800" height="450" src="https://whimsical.com/embed/RbNoyZiimR934Bh3Ui53u5"></iframe>
+1. Cards are released in **[Waves](./waves.mdx)** → each wave has a limited supply and unique rarity probabilities.  
+2. Every cardholder can onboard others through **[Invitations](./invitations.mdx)** → but invitations are scarce and unlock gradually or based on trust score.  
+3. The **[Minting Ceremony](./mint.mdx)** turns minting into a ritualized experience → animated intro, 3D reveal, collectible frame.  
+4. Minting gives a **[Chest](./chest.mdx)** instead of a card.  
+   - For **[Relic Holders](./relic-holder.mdx)**, the relic itself acts as the chest.  
+5. Burning the chest (or relic) reveals the **[NFT Card](./nft.mdx)** → interactive, animated, and collectible.  
+6. Some NFTs can also exist as **[Physical Editions](./physical-card.mdx)** → premium prints, QR code, NFC chip.  
+7. All invitations and trust actions feed into the **[Trust Graph](./trust-graph.mdx)** → a living map of connections.  
+8. The **[Reputation Checker](./reputation-checker.mdx)** lets anyone explore profiles, trust links, and degrees of separation.  
+9. Each card can optionally include a **[Personal Domain](./domain.mdx)** → a shareable identity hub with profile, connections, and external links.  
+
+<iframe style={{border:"none", borderRadius:"12px"}} width="100%" height="1000" src="https://whimsical.com/embed/EYKuwfpvwfF1JWmkEViKDo"></iframe>
+
 ---
 
 ## 🔗 How Everything Connects
 
-- **Waves** define **who gets in first** and how rare their cards are.  
-- **Invitations** let holders onboard others, but they’re **scarce** and tied to **trust score** and **time unlocks**.  
-- Each invitation and trust action updates the **Trust Graph**, the living map of the ecosystem.  
-- The **Reputation Checker** builds on this, letting you search, measure trust, and see **how many degrees away** someone is.  
-- **NFT formats, mint ceremony, and physical cards** ensure the experience is both **digital and tangible**.  
-- **Domain names** give holders a personalized identity linked to their Trust Card.  
+- **[Waves](./waves.mdx)** define **who enters first** and how rare their cards can be.  
+- **[Invitations](./invitations.mdx)** are the gateway for onboarding new members, tied to scarcity and trust score.  
+- The **[Minting Ceremony](./mint.mdx)** makes acquisition a memorable, ritualized event.  
+- **[Chests](./chest.mdx)** (or [relics](./relic-holder.mdx)) act as the intermediate container before receiving the card.  
+- **[NFT Cards](./nft.mdx)** provide identity, rarity, and status → optionally extended with **[physical editions](./physical-card.mdx)**.  
+- Each action updates the **[Trust Graph](./trust-graph.mdx)**, the backbone of the ecosystem.  
+- The **[Reputation Checker](./reputation-checker.mdx)** builds on this → search, measure trust, explore separation.  
+- **[Domains](./domain.mdx)** anchor digital identity, turning cards into shareable hubs.  
 
 ---
 
@@ -41,16 +47,10 @@ Trust Card is a system where **3D NFT cards** are not only collectibles, but als
 
 Trust Card is built as a **progressive, trust-driven ecosystem**:
 
-- **Scarcity** comes from **waves** and rarity probabilities.  
-- **Growth** comes from **invitations**, unlocking new members.  
-- **Reputation** comes from the **trust graph** and **score checker**.  
-- **Identity** comes from **NFT design**, **physical editions**, and **personal domains**.  
+- **Scarcity** → through **waves** and rarity probabilities.  
+- **Onboarding** → via **invitations**, unlocking new members.  
+- **Ownership** → through **minting, chests, and relics** leading to cards.  
+- **Reputation** → mapped in the **trust graph** and explored via the **reputation checker**.  
+- **Identity** → enhanced by **NFT formats, physical editions, and personal domains**.  
 
 👉 The following tutorials dive into each part in detail. Start with [Waves](./waves.mdx).  
-
-<BrowserOnly fallback={<div>Chargement du board…</div>}>
-  {() => {
-    const ExcalidrawBoard = require('@site/src/components/ExcalidrawBoard').default;
-    return <ExcalidrawBoard height={400} />;
-  }}
-</BrowserOnly>
