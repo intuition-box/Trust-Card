@@ -103,3 +103,46 @@
 .embedBox{border-radius:16px; border:1px solid var(--border); background:var(--panel); padding:8px;}
 .embedPlaceholder{display:grid; place-items:center; width:100%; min-height:280px; color:var(--inkSub); border:1px dashed rgba(255,255,255,.18); border-radius:12px;}
 .embedIframe{width:100%; height:520px; border:0; border-radius:12px;}
+
+/* ===== Mobile-only overrides (desktop inchangé) ===== */
+@media (max-width: 767px) {
+  /* Hero */
+  .heroBanner { padding: 2rem 1rem; }
+  .heroTitle { font-size: 28px; }
+  .heroLead { font-size: 14px; }
+
+  /* CTAs */
+  .buttons, .ctaRow { gap: 10px; justify-content: center; }
+
+  /* Viewer */
+  .viewer {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    justify-items: center;
+  }
+  .viewerCard { width: min(86vw, 320px); margin-top: 20px; }
+  .viewerCaption { text-align: center; }
+
+  /* Bento: garder 1 colonne, neutraliser les spans */
+  .bentoGrid { grid-template-columns: 1fr; }
+  .spanWide { grid-column: auto; }
+  .spanTall { grid-row: auto; }
+
+  /* Waves: meilleure lisibilité + wrap propre */
+  .waveList { gap: 8px; }
+  .waveItem { padding: 6px 10px; font-size: 13px; }
+
+  /* Embeds/diagram */
+  .embedIframe { height: 360px; }
+  .embedPlaceholder { min-height: 260px; }
+}
+
+/* Petits téléphones : boutons pleine largeur + cibles tactiles */
+@media (max-width: 480px) {
+  .btnPrimary, .btnSecondary {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px;
+  }
+}
