@@ -16,41 +16,41 @@ type Tile = {
 };
 
 const tiles: Tile[] = [
-  { 
-    title: "Overview", 
-    desc: "Discover the vision behind Trust-Card: how collectibles, invitations, and trust links combine to build a living graph of reputation.", 
-    to: "/docs/tutorial/overview", 
-    tag: "Start", 
-    emoji: "🌐", 
-    span: "wide" 
+  {
+    title: "Overview",
+    desc: "How collectibles, invitations, and trust links form a living reputation graph.",
+    to: "/docs/tutorial/overview",
+    tag: "Start",
+    emoji: "🌐",
+    span: "wide",
   },
-  { 
-    title: "Waves", 
-    desc: "Cards are released in limited waves. Each wave brings unique frames, rarity distributions, and a sense of progression for the community.", 
-    to: "/docs/tutorial/waves", 
-    tag: "Drops", 
-    emoji: "🌊" 
+  {
+    title: "Waves",
+    desc: "Limited drops with evolving frames and rarity distributions across Waves.",
+    to: "/docs/tutorial/waves",
+    tag: "Drops",
+    emoji: "🌊",
   },
-  { 
-    title: "Invitations", 
-    desc: "Every card grants invitations. Onboard new members, extend trust, and grow the network through curated connections that shape the graph.", 
-    to: "/docs/tutorial/invitations", 
-    tag: "Onboarding", 
-    emoji: "✉️" 
+  {
+    title: "Invitations",
+    desc: "Cardholders invite others. Curated onboarding grows the Trust Graph.",
+    to: "/docs/tutorial/invitations",
+    tag: "Onboarding",
+    emoji: "✉️",
   },
-  { 
-    title: "Physical Edition", 
-    desc: "Premium printed versions of Trust-Cards with NFC/QR integration. Carry your identity and trust links into the physical world.", 
-    to: "/docs/tutorial/physical-card", 
-    tag: "IRL", 
-    emoji: "📇" 
+  {
+    title: "Physical Edition",
+    desc: "Premium prints with NFC/QR to carry your identity IRL.",
+    to: "/docs/tutorial/physical-card",
+    tag: "IRL",
+    emoji: "📇",
   },
-  { 
-    title: "Personal Domain", 
-    desc: "Claim yourname.box — a personal hub where your Trust-Card, connections, and social links come together into a shareable identity page.", 
-    to: "/docs/tutorial/domain", 
-    tag: "Identity", 
-    emoji: "🔗" 
+  {
+    title: "Personal Domain",
+    desc: "Claim yourname.box — your shareable identity hub.",
+    to: "/docs/tutorial/domain",
+    tag: "Identity",
+    emoji: "🔗",
   },
 ];
 
@@ -82,17 +82,96 @@ function HomepageHeader() {
     <header className={clsx("hero", styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">{siteConfig.title}</Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+
+        <p className={clsx("hero__subtitle", styles.heroExplainer)}>
+          Beyond being just an NFT, it's a mechanism for <strong>access</strong>, <strong>experience</strong>, and <strong>reputation</strong>.
+        </p>
+
         <div className={styles.buttons}>
-          <Link
-            className={clsx("button button--secondary button--lg", styles.btnPrimary)}
-            to="/docs/tutorial/overview"
-          >
-            Explore
+          <Link className={clsx("button button--lg", styles.btnPrimary)} to="/docs/tutorial/overview">
+            How it works
+          </Link>
+          <Link className={clsx("button button--lg", styles.btnSecondary)} to="/docs/tutorial/invitations">
+            Get an invitation
           </Link>
         </div>
       </div>
     </header>
+  );
+}
+
+function HowItWorks() {
+  const steps = [
+    {
+      num: 1,
+      icon: "✉️",
+      title: "Invitations open access",
+      desc: "A limited set of invitations is issued and expands over time.",
+    },
+    {
+      num: 2,
+      icon: "🗝️",
+      title: "Invitation → mint a Chest",
+      desc: "You receive a chest that holds your future card’s rarity.",
+    },
+    {
+      num: 3,
+      icon: "🪪",
+      title: "Reveal the NFT card (+ Physical)",
+      desc: "Burn the chest to reveal the 3D NFT, with the possibility of also receiving a premium physical card.",
+    },
+    {
+      num: 4,
+      icon: "⭐",
+      title: "Build trust → more invitations",
+      desc: "Your Trust Score unlocks additional invite capacity.",
+    },
+  ];
+  return (
+    <div className="container">
+      <Heading as="h2" className={styles.blockTitle}>How it works</Heading>
+      <div className={styles.flowGrid} aria-label="Trust Card flow">
+        {steps.map((s) => (
+          <div key={s.num} className={styles.flowCard}>
+            <div className={styles.flowTop}>
+              <span className={styles.flowNum}>{s.num}</span>
+              <span className={styles.flowIcon} aria-hidden>{s.icon}</span>
+            </div>
+            <div className={styles.flowTitle}>{s.title}</div>
+            <div className={styles.flowDesc}>{s.desc}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function AccessGrowthBlock() {
+  return (
+    <div className="container">
+      <div className={styles.tsBlock}>
+        <div className={styles.tsBadge}>Access & Growth</div>
+        <Heading as="h3" className={styles.tsTitle}>
+          <span className={styles.tsHighlight}>Invitation</span> gives mint access. <span className={styles.tsHighlight}>Trust Score</span> unlocks more invitations.
+        </Heading>
+        <p className={styles.tsLead}>
+          Invitations grant access to minting. As trust grows across the network, holders unlock additional invitations to onboard others.
+        </p>
+        <div className={styles.ctaRow}>
+          <Link className={clsx("button", styles.btnPrimary)} to="/docs/tutorial/invitations">
+            See invitations
+          </Link>
+          <Link className={clsx("button", styles.btnSecondary)} to="/docs/tutorial/relic-holder">
+            Relic Holder ?
+          </Link>
+        </div>
+        <ul className={styles.checkList}>
+          <li>Ownership → through minting, chests, and relics leading to cards.</li>
+          <li>Reputation → mapped in the trust graph and explored via the reputation checker.</li>
+          <li>Identity → enhanced by NFT formats, physical editions, and personal domains.</li>
+        </ul>
+      </div>
+    </div>
   );
 }
 
@@ -108,18 +187,22 @@ export default function Home(): ReactNode {
                 <Heading as="h1" className={styles.heroTitle}>
                   Trust the network.
                 </Heading>
-                <p className={styles.heroLead}>Not just a collectible — an invitation, a proof of trust, and a key to reputation. Grow the network, visualize connections, and unlock new opportunities across the Intuition ecosystem.</p>
+                <p className={styles.heroLead}>
+                  Not just a collectible — an invitation, a proof of trust, and a key to reputation.
+                  Each wave introduces scarcity, each mint strengthens belonging, and each invitation consolidates the Trust Graph, paving the way for a community that grows progressively and with trust
+                </p>
                 <div className={styles.ctaRow}>
                   <Link className={clsx("button", styles.btnPrimary)} to="/docs/tutorial/overview">
                     Start reading
                   </Link>
                   <Link className={clsx("button", styles.btnSecondary)} to="/docs/tutorial/waves">
-                    See waves
+                    See Waves
                   </Link>
                 </div>
 
                 {/* Waves */}
                 <div className={styles.waveWrap}>
+                  <div className={styles.waveTitle}>Waves</div>
                   <ul className={styles.waveList}>
                     {WAVES.map((w) => {
                       const active = w === ACTIVE_WAVE;
@@ -131,14 +214,13 @@ export default function Home(): ReactNode {
                       );
                     })}
                   </ul>
+                  <div className={styles.waveSubNote}>
+                    Access spreads via invitations. Trust Score increases invitation capacity.
+                  </div>
                   <div className={styles.waveLinks}>
-                    <Link to="/docs/tutorial/trust-graph" className={styles.linkInline}>
-                      Trust Graph ↗
-                    </Link>
+                    <Link to="/docs/tutorial/trust-graph" className={styles.linkInline}>Trust Graph ↗</Link>
                     <span className={styles.bullet} />
-                    <Link to="/docs/tutorial/reputation-checker" className={styles.linkInline}>
-                      Reputation Checker ↗
-                    </Link>
+                    <Link to="/docs/tutorial/reputation-checker" className={styles.linkInline}>Reputation Checker ↗</Link>
                   </div>
                 </div>
               </div>
@@ -155,6 +237,9 @@ export default function Home(): ReactNode {
               </div>
             </div>
           </div>
+
+          <AccessGrowthBlock />
+          <HowItWorks />
 
           {/* Bento */}
           <div className="container">
