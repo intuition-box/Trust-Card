@@ -255,7 +255,7 @@ export default function Home(): ReactNode {
             <Heading as="h2" className={styles.subTitle}>👁️</Heading>
             <div className={styles.embedBox}>
               <div className={styles.embedPlaceholder}>
-                Add your Whimsical / image / iframe here
+                <iframe style={{border:"none", borderRadius:"12px"}} width="100%" height="600" src="https://whimsical.com/embed/WPU73HZ7RAHdh3vjNfkPrU"></iframe>
               </div>
             </div>
           </div>
